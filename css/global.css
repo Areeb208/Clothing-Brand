@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* fonts */
+@font-face {
+    font-family: 'LucidityExpand';
+    src: url('./font/lucidity-expand.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --shadowline-bg: #000000;
+    --shadowline-surface: #0E0E0F;
+    --shadowline-graphite: #1A1B1D;
+    --shadowline-muted: #a1a1a1;
+    --shadowline-accent: #321a3f;
+    --shadowline-text: #FFFFFF;
+    --shadowline-accent-hover: #402250;
+
+    --font-primary: "LucidityExpand", sans-serif;
+    --font-secondary: "Inter", sans-serif;
+}
+
+body {
+    background: #000000;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(48, 48, 48, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    background-repeat: no-repeat;
+    font-family: var(--font-secondary);
+    height: 100vh;
+
+}
+
+
+/* Header */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 96px;
+    padding: 0 2rem;
+}
+
+/* logo */
+.logo a {
+    font-family: var(--font-primary);
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--shadowline-text);
+}
+
+/* nav */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.main-nav ul {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.2rem;
+    list-style: none;
+}
+
+.main-nav .links a {
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--shadowline-muted);
+    transition: all .5s ease;
+
+}
+
+.main-nav .links a:hover {
+    color: var(--shadowline-text);
+}
+
+/* pre-order button */
+.pre-btn {
+    padding: .6rem 1.4rem;
+    background: var(--shadowline-accent);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 16px;
+
+    transform: scale(1);
+    transition: all .5s ease;
+}
+
+.pre-btn:hover {
+    transform: scale(1.04);
+    background: var(--shadowline-accent-hover);
+}
+
+/* cart button */
+.cart-btn {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--shadowline-text);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .6rem .9rem;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+
+    transform: scale(1);
+    transition: transform .5s ease, background .5s ease;
+}
+
+.cart-btn:hover {
+    transform: scale(1.08);
+    background: rgba(255, 255, 255, 0.05);
+}

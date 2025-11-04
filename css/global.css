@@ -96,12 +96,10 @@ body {
     cursor: pointer;
     font-size: 16px;
 
-    transform: scale(1);
     transition: all .5s ease;
 }
 
 .pre-btn:hover {
-    transform: scale(1.04);
     background: var(--shadowline-accent-hover);
 }
 
@@ -120,11 +118,81 @@ body {
     border-radius: 10px;
     font-size: 20px;
 
-    transform: scale(1);
-    transition: transform .5s ease, background .5s ease;
+    transition: background .5s ease;
 }
 
 .cart-btn:hover {
-    transform: scale(1.08);
     background: rgba(255, 255, 255, 0.05);
+}
+
+/* Header elements animation */
+.main-header .logo {
+    opacity: 0;
+    transform: translate(-100px, -50px) scaleY(0.8);
+    animation: pullInTopLeft 0.8s forwards;
+    animation-delay: 1s;
+}
+
+.main-header .links {
+    opacity: 0;
+    transform: translateY(-50px) scaleY(0.8);
+    animation: pullInTop 0.8s forwards;
+    animation-delay: 1.2s;
+}
+
+.main-header .pre-btn,
+.main-header .cart-btn {
+    opacity: 0;
+    transform: translate(100px, -50px) scaleY(0.8);
+    animation: pullInTopRight 0.8s forwards;
+    animation-delay: 1.4s;
+}
+
+@keyframes pullInTopLeft {
+    0% {
+        opacity: 0;
+        transform: translate(-100px, -50px) scaleY(0.8);
+    }
+
+    60% {
+        transform: translate(10px, 10px) scaleY(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scaleY(1);
+    }
+}
+
+
+@keyframes pullInTopRight {
+    0% {
+        opacity: 0;
+        transform: translate(100px, -50px) scaleY(0.8);
+    }
+
+    60% {
+        transform: translate(-10px, 10px) scaleY(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scaleY(1);
+    }
+}
+
+@keyframes pullInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px) scaleY(0.8);
+    }
+
+    60% {
+        transform: translateY(5px) scaleY(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
 }

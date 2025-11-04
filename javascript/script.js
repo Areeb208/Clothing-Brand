@@ -23,6 +23,11 @@ const variations = [
     }
 ];
 
+variations.forEach(v => {
+    const i = new Image();
+    i.src = v.img;
+});
+
 let current = 0;
 
 function switchVariation(dir) {
@@ -49,3 +54,18 @@ function switchVariation(dir) {
 
 document.getElementById("rightArrow").onclick = () => switchVariation("right");
 document.getElementById("leftArrow").onclick = () => switchVariation("left");
+
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    const content = document.getElementById("content");
+
+    // Fade out loader
+    loader.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+    loader.style.opacity = 0;
+    loader.style.transform = "scale(1.05)";
+
+    setTimeout(() => {
+        loader.style.display = "none";
+        content.style.opacity = 1;
+    }, 800);
+});
